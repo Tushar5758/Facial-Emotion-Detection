@@ -1,10 +1,12 @@
+setuptools>=42
+wheel
+
 # Flask Framework
 Flask==2.3.3
 Flask-CORS==4.0.0
 
 # Computer Vision and Image Processing
-setuptools>=42
-wheel
+
 opencv-python==4.8.1.78
 numpy==1.24.3
 
