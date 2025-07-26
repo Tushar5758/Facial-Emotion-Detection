@@ -1,0 +1,256 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: white;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 20px 0;
+    border-bottom: 2px solid #eee;
+}
+
+h1 {
+    color: #2c3e50;
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    color: #7f8c8d;
+    font-size: 1.2em;
+}
+
+.main-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.webcam-section, .controls-section {
+    background: #f8f9fa;
+    border: 2px solid #e9ecef;
+    border-radius: 15px;
+    padding: 25px;
+}
+
+.webcam-section {
+    text-align: center;
+}
+
+#videoElement {
+    width: 100%;
+    max-width: 400px;
+    height: 300px;
+    border: 3px solid #3498db;
+    border-radius: 10px;
+    background: #000;
+    margin-bottom: 20px;
+    display: none;
+}
+
+.camera-placeholder {
+    width: 100%;
+    max-width: 400px;
+    height: 300px;
+    border: 3px dashed #bdc3c7;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ecf0f1;
+    margin: 0 auto 20px;
+    color: #7f8c8d;
+    font-size: 1.1em;
+}
+
+.btn {
+    background: linear-gradient(135deg, #3498db, #2980b9);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1.1em;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 5px;
+    min-width: 120px;
+}
+
+.btn:hover {
+    background: linear-gradient(135deg, #2980b9, #1f5f8b);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
+}
+
+.btn:disabled {
+    background: #bdc3c7;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.btn-success {
+    background: linear-gradient(135deg, #27ae60, #229954);
+}
+
+.btn-success:hover {
+    background: linear-gradient(135deg, #229954, #1e8449);
+}
+
+.btn-warning {
+    background: linear-gradient(135deg, #f39c12, #e67e22);
+}
+
+.btn-warning:hover {
+    background: linear-gradient(135deg, #e67e22, #d35400);
+}
+
+.status {
+    margin: 15px 0;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.status.info {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.status.warning {
+    background: #fff3cd;
+    color: #856404;
+    border: 1px solid #ffeaa7;
+}
+
+.status.error {
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 20px;
+    background: #ecf0f1;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 15px 0;
+    display: none;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #3498db, #2ecc71);
+    width: 0%;
+    transition: width 0.3s ease;
+    border-radius: 10px;
+}
+
+.results-section {
+    background: #f8f9fa;
+    border: 2px solid #e9ecef;
+    border-radius: 15px;
+    padding: 25px;
+    margin-top: 20px;
+    display: none;
+}
+
+.emotion-result {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+    padding: 10px;
+    background: white;
+    border-radius: 8px;
+    border-left: 4px solid #3498db;
+}
+
+.emotion-bar {
+    width: 200px;
+    height: 20px;
+    background: #ecf0f1;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.emotion-fill {
+    height: 100%;
+    border-radius: 10px;
+    transition: width 0.5s ease;
+}
+
+.recommendations {
+    background: #e8f8f5;
+    border: 2px solid #a3e4d7;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.recommendations h3 {
+    color: #138d75;
+    margin-bottom: 15px;
+}
+
+.recommendation-item {
+    background: white;
+    padding: 12px;
+    margin: 8px 0;
+    border-radius: 6px;
+    border-left: 4px solid #2ecc71;
+}
+
+.frames-captured {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 15px;
+    justify-content: center;
+}
+
+.frame-thumbnail {
+    width: 80px;
+    height: 60px;
+    border: 2px solid #3498db;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+@media (max-width: 768px) {
+    .main-content {
+        grid-template-columns: 1fr;
+    }
+    
+    h1 {
+        font-size: 2em;
+    }
+    
+    .container {
+        padding: 10px;
+    }
+    
+    .btn {
+        width: 100%;
+        margin: 5px 0;
+    }
+}

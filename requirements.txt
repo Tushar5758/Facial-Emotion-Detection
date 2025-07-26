@@ -1,0 +1,40 @@
+# Flask Framework
+Flask==2.3.3
+Flask-CORS==4.0.0
+
+# Computer Vision and Image Processing
+opencv-python==4.8.1.78
+numpy==1.24.3
+
+# Deep Learning for Emotion Detection (Optional but Recommended)
+deepface==0.0.79
+tensorflow==2.13.0
+
+# Alternative lightweight models (if DeepFace is too heavy)
+# mtcnn==0.1.1
+# keras==2.13.1
+
+# Additional Dependencies for DeepFace
+Pillow==10.0.1
+gdown==4.7.1
+tqdm==4.66.1
+
+# Utilities
+uuid
+datetime
+json
+logging
+traceback
+base64
+os
+
+# Development and Testing (Optional)
+# pytest==7.4.2
+# pytest-flask==1.2.0
+
+# Production Server (Optional)
+# gunicorn==21.2.0
+# waitress==2.1.2
+
+# Note: Some modules like uuid, datetime, json, logging, traceback, base64, os 
+# are built-in Python modules and don't need to be installed via pip

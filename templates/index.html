@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facial Emotion Detection System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎭 Facial Emotion Detection</h1>
+            <p class="subtitle">AI-powered emotion recognition using DeepFace</p>
+        </header>
+
+        <div class="main-content">
+            <div class="webcam-section">
+                <h3>📷 Camera Feed</h3>
+                <div class="camera-placeholder" id="cameraPlaceholder">
+                    Click "Start Camera" to begin
+                </div>
+                <video id="videoElement" autoplay muted playsinline></video>
+                <div id="captureStatus" class="status info" style="display: none;">
+                    Ready to capture frames...
+                </div>
+                <div class="progress-bar" id="progressBar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                <div class="frames-captured" id="framesThumbnails"></div>
+            </div>
+
+            <div class="controls-section">
+                <h3>🎛️ Controls</h3>
+                <button id="startBtn" class="btn">Start Camera</button>
+                <button id="captureBtn" class="btn btn-success" disabled>Capture Frames (10s)</button>
+                <button id="analyzeBtn" class="btn btn-warning" disabled>Analyze Emotions</button>
+                <button id="retakeBtn" class="btn" disabled>Retake Test</button>
+                
+                <div id="systemStatus" class="status info">
+                    System ready. Click "Start Camera" to begin.
+                </div>
+
+                <div id="sessionInfo" style="margin-top: 20px; padding: 15px; background: #e8f6f3; border-radius: 8px; display: none;">
+                    <h4>📁 Session Information</h4>
+                    <p><strong>Session ID:</strong> <span id="sessionId"></span></p>
+                    <p><strong>Frames Captured:</strong> <span id="frameCount">0</span>/10</p>
+                    <p><strong>Status:</strong> <span id="sessionStatus">Waiting</span></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="results-section" id="resultsSection">
+            <h3>📊 Emotion Analysis Results</h3>
+            <div id="emotionResults"></div>
+            
+            <div class="recommendations" id="recommendationsSection" style="display: none;">
+                <h3>💡 Personalized Recommendations</h3>
+                <div id="recommendationsList"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
